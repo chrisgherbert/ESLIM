@@ -1,0 +1,110 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	{% block home_slides %}
+
+		{% if slides %}
+
+			<div class="section">
+
+				<div class="home-slides js-home-slides owl-carousel">
+
+					{% for slide in slides %}
+
+						<div class="home-slides__item">
+							<img src="{{ slide.src }}" alt="{{ slide.src|default('Slide Image') }}" class="home-slides__img">
+						</div><!-- /.home-slides__item -->
+
+					{% endfor %}
+
+				</div><!-- /.home-slides -->
+
+			</div><!-- /.section -->
+
+		{% endif %}
+
+		{% block post_content %}
+
+			<div class="section">
+
+				{% if post.content %}
+
+					<div class="row">
+
+						<div class="col-sm-8">
+
+							<div class="home-page-content">
+
+								<div class="the-content">
+
+									{{ post.content }}
+
+								</div><!-- /.the-content -->
+
+							</div><!-- /.home-page-content -->
+
+						</div><!-- /.col-sm-8 -->
+
+						<div class="col-sm-4">
+
+							<div class="home-posts">
+
+								<div class="home-posts__page">
+
+									{% for post in posts[:3] %}
+
+										<div class="post-tease">
+											<h4 class="post-tease__title">
+												<a href="{{ post.link }}">
+													{{ post.title }}
+												</a>
+											</h4><!-- /.post-tease__title -->
+											<div class="post-tease__meta">
+												{{ post.date }}
+											</div><!-- /.post-tease__meta -->
+										</div><!-- /.home-post -->
+
+									{% endfor %}
+
+								</div><!-- /.home-posts__page -->
+
+							</div><!-- /.home-page-posts -->
+
+						</div><!-- /.col-sm-4 -->
+
+					</div><!-- /.row -->
+
+				{% endif %}
+
+			</div><!-- /.section -->
+
+		{% endblock %}
+
+	{% endblock %}
+
+	{% block home_image_links %}
+
+		<div class="section">
+
+			{% if image_links %}
+
+				<div class="home-image-links">
+
+					{% for image_link in image_links %}
+
+						<a href="{{ image_link.link }}" class="home-image-links__link">
+							<img src="{{ image_link.image.src }}" class="home-image-links__img">
+						</a>
+
+					{% endfor %}
+
+				</div><!-- /.home-image-links -->
+
+			{% endif %}
+
+		</div><!-- /.section -->
+
+	{% endblock %}
+
+{% endblock %}

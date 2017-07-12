@@ -1,0 +1,87 @@
+<header class="main-header" id="main-header">
+
+	<div class="header__top">
+
+		<h1 class="header__logo">
+			<a href="/" class="header__logo-link">
+				<img class="header__logo-img" src="{{ theme.link }}/assets/img/header-banner.jpg" alt="English as a Second Language and Immigrant Ministries">
+			</a>
+		</h1><!-- /.header__logo-image -->
+
+		<button class="mobile-trigger visible-xs-inline-block" id="mobileTrigger" aria-controls="mobileMenu">
+			<i class="fa fa-bars" aria-hidden="true"></i>
+			<span class="sr-only">Mobile Menu</span>
+		</button>
+
+	</div><!-- /.header__top -->
+
+	<div class="header__middle">
+
+		<form class="header__middle-section header__search-form">
+			<input type="text" name="s" class="header__search-input">
+		</form>
+
+		<div class="header__middle-section header__language-links">
+
+			<a href="/spanish_info.html" class="header__language-link">
+				<img src="{{ theme.link }}/assets/img/languages/spanish.png" alt="Espanol">
+			</a>
+
+			<a href="/korean_info.html" class="header__language-link">
+				<img src="{{ theme.link }}/assets/img/languages/korean.png" alt="Korean">
+			</a>
+
+			<a href="/viet_info.html" class="header__language-link">
+				<img src="{{ theme.link }}/assets/img/languages/vietnamese.png" alt="Vietnamese">
+			</a>
+
+		</div><!-- /.header__language-links -->
+
+		<div class="header__middle-section">
+
+			<i class="fa fa-phone-square"></i>&nbsp; (703) 841-0292
+
+		</div><!-- /.header__social-icons -->
+
+	</div><!-- /.header__middle -->
+
+	<div class="header__nav">
+
+		{% if main_menu %}
+			<nav class="main-menu hidden-xs" role="navigation">
+				<ul class="main-menu__list">
+					{% for item in main_menu.items %}
+						<li class="main-menu__item {{ item.classes|join(' ') }}">
+							<a class="main-menu__link" href="{{ item.url }}">
+								{{ item.title }}
+							</a>
+
+							{% if item.children %}
+
+								<ul class="main-menu__sublist">
+
+									{% for child in item.children %}
+
+										<li class="main-menu__subitem">
+
+											<a href="{{ child.url }}" class="main-menu__sublink">
+												{{ child.title }}
+											</a>
+
+										</li><!-- /.main-menu__subitem -->
+
+									{% endfor %}
+
+								</ul><!-- /.main-menu__submenu -->
+
+							{% endif %}
+
+						</li>
+					{% endfor %}
+				</ul>
+			</nav><!-- /.main-header__nav -->
+		{% endif %}
+
+	</div><!-- /.header__nav -->
+
+</header><!-- /#main-header.c-main-header -->

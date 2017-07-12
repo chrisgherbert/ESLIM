@@ -1,0 +1,63 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<article>
+
+		<div class="container-fluid">
+
+			{% block single_header %}
+
+				<header>
+
+					<h1>
+						{{ post.title }}
+					</h1>
+
+				</header>
+
+			{% endblock %}
+
+			<div class="row">
+
+				<div class="col-sm-8">
+
+					{% block single_body %}
+
+						<div class="the-content">
+							{{ post.content}}
+						</div>
+
+					{% endblock %}
+
+					{% block single_footer %}
+
+						<footer>
+
+						</footer>
+
+					{% endblock %}
+
+				</div>
+
+				<div class="col-sm-4">
+
+					{% block single_sidebar %}
+
+						<aside>
+
+							<h4>Related Posts</h4>
+
+						</aside>
+
+					{% endblock %}
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</article>
+
+{% endblock %}
