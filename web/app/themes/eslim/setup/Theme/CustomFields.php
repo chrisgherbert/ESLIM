@@ -171,6 +171,30 @@ class CustomFields {
 			'type' => 'text'
 		));
 
+		$cmb2->add_field(array(
+			'id' => 'lat',
+			'name' => 'Latitude (read only)',
+			'desc' => 'The site should automatically generate this when an address is provided',
+			'type' => 'text',
+			'save_field' => false,
+			'attributes' => array(
+				'readonly' => 'readonly',
+				'disabled' => 'disabled'
+			)
+		));
+
+		$cmb2->add_field(array(
+			'id' => 'lng',
+			'name' => 'Longitude (read only)',
+			'desc' => 'The site should automatically generate this when an address is provided',
+			'type' => 'text',
+			'save_field' => false,
+			'attributes' => array(
+				'readonly' => 'readonly',
+				'disabled' => 'disabled'
+			)
+		));
+
 	}
 
 	public function program_extended(){

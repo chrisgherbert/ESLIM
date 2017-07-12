@@ -38,6 +38,7 @@ new Theme\Timber\Context();
 new Theme\Hooks\Feeds();
 new Theme\Hooks\Archives();
 new Theme\Hooks\YoutubeFeaturedImage();
+new Theme\Hooks\ContentCreation();
 
 /////////////////////////
 // Basic Theme Options //
